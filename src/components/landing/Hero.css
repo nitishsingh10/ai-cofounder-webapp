@@ -1,0 +1,90 @@
+.hero {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: var(--spacing-2xl) var(--spacing-xl);
+    /* Ensure it takes roughly the top part of the screen */
+    min-height: 60vh;
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+.product-label {
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    font-weight: 600;
+    color: var(--color-text-secondary);
+    margin-bottom: var(--spacing-lg);
+    display: inline-block;
+}
+
+.headline {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    line-height: 1.1;
+    font-weight: 600;
+    /* Inter SemiBold */
+    letter-spacing: -0.03em;
+    color: var(--color-text);
+    margin-bottom: var(--spacing-lg);
+}
+
+.subheadline {
+    font-size: 1.25rem;
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+    font-weight: 400;
+    margin-bottom: var(--spacing-2xl);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta-group {
+    display: flex;
+    gap: var(--spacing-md);
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-primary {
+    background-color: var(--color-text);
+    /* Near black as per design "Surface: white, Text: near-black, Accent: very subtle indigo" - wait, primary CTA usually better as Accent or Near-black. User said "Accent: very subtle indigo (only for focus)". I'll use near-black for the main confident action, or the subtle indigo. Let's stick to the subtle indigo for button to stand out slightly, or near-black for "Serious/Confident". I'll go with Near-Black for "Quietly powerful" and Accent for focus states. */
+    background-color: #1A1A1A;
+    color: white;
+    padding: 14px 28px;
+    border-radius: 8px;
+    /* Rounded corners but not pill */
+    font-weight: 500;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: opacity var(--transition-fast), transform var(--transition-fast);
+}
+
+.btn-primary:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+}
+
+.btn-secondary {
+    color: var(--color-text-secondary);
+    padding: 14px 28px;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: color var(--transition-fast);
+}
+
+.btn-secondary:hover {
+    color: var(--color-text);
+}
+
+.icon-right {
+    margin-top: 1px;
+}

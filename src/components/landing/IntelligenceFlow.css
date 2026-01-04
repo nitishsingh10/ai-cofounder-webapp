@@ -1,0 +1,76 @@
+.intelligence-flow {
+    border-top: 1px solid var(--color-border);
+    padding: var(--spacing-2xl) 0;
+    max-width: 1000px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.flow-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    padding: 0 var(--spacing-xl);
+}
+
+.flow-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-md);
+    position: relative;
+    z-index: 1;
+    width: 140px;
+}
+
+.icon-wrapper {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-text-secondary);
+    transition: border-color var(--transition-fast), color var(--transition-fast);
+}
+
+.flow-step:hover .icon-wrapper {
+    border-color: var(--color-text);
+    color: var(--color-text);
+}
+
+.step-label {
+    font-size: 0.875rem;
+    color: var(--color-text-secondary);
+    font-weight: 500;
+    text-align: center;
+}
+
+.flow-line {
+    position: absolute;
+    top: 24px;
+    left: 50%;
+    /* Start from center of current item */
+    /* Width should stretch to the next item. Since we are using flex space-between, this is tricky with static CSS. 
+     A better way for the line is to have a background line behind everything or use ::after on the container.
+     Let's use a simpler approach: A line behind the whole container.
+  */
+    display: none;
+}
+
+/* Alternative line approach: The container has a line through the middle */
+.flow-container::before {
+    content: '';
+    position: absolute;
+    top: 24px;
+    /* Center of icon (48px height) */
+    left: 10%;
+    /* Inset slightly */
+    right: 10%;
+    height: 1px;
+    background-color: var(--color-border);
+    z-index: 0;
+}
